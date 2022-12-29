@@ -1,0 +1,33 @@
+﻿using System;
+using Internal;
+
+namespace project2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int x, y, sum;
+            int n1, n2;
+            Console.Write("Please enter the starting range of number : ");
+            n1 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("please enter the ending range of number : ");
+            n2 = Convert.ToInt32(Console.ReadLine());
+            Console.Write("The Perfect numbers are : ");
+            for (x = n1; x <= n2; x++)
+            {
+                y = 1;
+                sum = 0;
+                while (y < x)
+                {
+                    if (x % y == 0)
+                        sum = sum + y;
+                    y++;
+                }
+                if (sum == x)
+                    Console.Write("{0} ", x);
+            }
+        }
+    }
+}
+
